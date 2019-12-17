@@ -12,6 +12,7 @@
 
 #include "dio_hw.h"
 #include "dio_types.h"
+
 //#define LCD_Dir				  DDRA_REG			/* Define LCD data port direction */
 #define LCD_Port			  PORTA_REG			/* Define LCD data port */
 //#define LCD_Dir_Control		  DDRB_REG			/* Define LCD Control port direction */
@@ -19,7 +20,7 @@
 
 #define RS					  Dio_Channel_B1	/* Define Register Select pin */
 #define EN					  Dio_Channel_B3
-#define RW					  Dio_Channel_B4			/* Define Register Select pin */
+#define RW					  Dio_Channel_B2			/* Define Register Select pin */
 
 
 

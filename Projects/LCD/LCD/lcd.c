@@ -22,7 +22,7 @@ void LCD_Init (void)  /* LCD Initialize function */
 	Dio_WriteChannel(RW,STD_low);
 	_delay_ms(20);		/* LCD Power ON delay always >15ms */
 	
-	LCD_Command(0x33);
+	LCD_Command(0x33); //3 3 3 2
 	LCD_Command(0x32);	/* Send for 4 bit initialization of LCD  */
 	LCD_Command(0x28);	/* 2 line, 5*8 matrix in 4-bit mode */
 	LCD_Command(0x0c);	/* Display on cursor off */
@@ -70,12 +70,12 @@ void LCD_Char( unsigned char data )
 	Dio_WritePort(Dio_Port_A,((LCD_Port & 0x0F) | (data & 0xF0)));
 	Dio_WriteChannel(RS,STD_high);
 	Dio_WriteChannel(EN,STD_high);
-	_delay_us(10);
+	_delay_us(1);
 	Dio_WriteChannel(EN,STD_low);
 	_delay_us(2000);
 	Dio_WritePort(Dio_Port_A,((LCD_Port & 0x0F) | (data << 4)));  /* Sending lower nibble */
 	Dio_WriteChannel(EN,STD_high);
-	_delay_us(10);
+	_delay_us(1);
 	Dio_WriteChannel(EN,STD_low);
 	_delay_ms(20);
 }
@@ -83,7 +83,7 @@ void LCD_Char( unsigned char data )
 /*
 
 */
-void LCD_String (char *str)		/* Send string to LCD function */
+void LCD_String(char *str)		/* Send string to LCD function */
 {
 	int i;
 	for(i=0;str[i]!=0;i++)		/* Send each char of string till the NULL */

@@ -468,23 +468,23 @@ END GROUP
  .debug_frame   0x00000068       0xc0 lcd.o
  .debug_frame   0x00000128       0x24 lcd_lab01.o
 
-.debug_str      0x00000000      0x6de
+.debug_str      0x00000000      0x711
  *(.debug_str)
  .debug_str     0x00000000      0x196 C:/Program Files (x86)/Atmel/Studio/7.0/Packs/atmel/ATmega_DFP/1.3.300/gcc/dev/atmega32/avr5/crtatmega32.o
  .debug_str     0x00000196      0x3d5 dio.o
                                 0x3e7 (size before relaxing)
  .debug_str     0x0000056b       0x91 dio_cfg.o
                                 0x3e4 (size before relaxing)
- .debug_str     0x000005fc       0xbb lcd.o
-                                0x44b (size before relaxing)
- .debug_str     0x000006b7       0x27 lcd_lab01.o
-                                0x408 (size before relaxing)
+ .debug_str     0x000005fc       0xee lcd.o
+                                0x44c (size before relaxing)
+ .debug_str     0x000006ea       0x27 lcd_lab01.o
+                                0x409 (size before relaxing)
 
-.debug_loc      0x00000000      0x97f
+.debug_loc      0x00000000      0x97d
  *(.debug_loc)
  .debug_loc     0x00000000      0x284 dio.o
  .debug_loc     0x00000284      0x106 dio_cfg.o
- .debug_loc     0x0000038a      0x5f5 lcd.o
+ .debug_loc     0x0000038a      0x5f3 lcd.o
 
 .debug_macinfo
  *(.debug_macinfo)

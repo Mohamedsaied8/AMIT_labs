@@ -17,15 +17,15 @@ char heart[8] = {
 	0b00100,
 	0b00000
 };
-char smileyFace[] = {
-  0x00,
-  0x00,
-  0x0A,
-  0x00,
-  0x11,
-  0x0E,
-  0x00,
-  0x00
+char smileyFace[8] = {
+	0x00,//0B00000
+	0x00,
+	0x0A,
+	0x00,
+	0x11,
+	0x0E,
+	0x00,
+	0x00
 };
 
 	
@@ -37,7 +37,8 @@ int main(void)
 	LCD_Command(0x80);
 	LCD_String("Welcome to AMIT");
 	LCD_Char(' ');		/* space between each custom char. */
-	LCD_Custom_Char(0,smileyFace); 
+	
+	LCD_Custom_Char(0,smileyFace); //
 	LCD_Command(0x8F);
 	LCD_Char(0);	/* char at '0'th position will display on lcd */
 	
