@@ -17,15 +17,15 @@ Idx Name          Size      VMA       LMA       File off  Algn
                   CONTENTS, READONLY, DEBUGGING
   6 .debug_abbrev 000007b1  00000000  00000000  00001a82  2**0
                   CONTENTS, READONLY, DEBUGGING
-  7 .debug_line   000005d4  00000000  00000000  00002233  2**0
+  7 .debug_line   000004d9  00000000  00000000  00002233  2**0
                   CONTENTS, READONLY, DEBUGGING
-  8 .debug_frame  000000e0  00000000  00000000  00002808  2**2
+  8 .debug_frame  000000e0  00000000  00000000  0000270c  2**2
                   CONTENTS, READONLY, DEBUGGING
-  9 .debug_str    00000418  00000000  00000000  000028e8  2**0
+  9 .debug_str    000003c2  00000000  00000000  000027ec  2**0
                   CONTENTS, READONLY, DEBUGGING
- 10 .debug_loc    000005b6  00000000  00000000  00002d00  2**0
+ 10 .debug_loc    000005b6  00000000  00000000  00002bae  2**0
                   CONTENTS, READONLY, DEBUGGING
- 11 .debug_ranges 00000058  00000000  00000000  000032b6  2**0
+ 11 .debug_ranges 00000058  00000000  00000000  00003164  2**0
                   CONTENTS, READONLY, DEBUGGING
 
 Disassembly of section .text:
@@ -80,6 +80,12 @@ Disassembly of section .text:
   7e:	0c 94 00 00 	jmp	0	; 0x0 <__vectors>
 
 00000082 <LCD_Command>:
+	if (row == 0 && pos<16)
+	LCD_Command((pos & 0x0F)|0x80);	/* Command of first row and required position<16 */
+	else if (row == 1 && pos<16)
+	LCD_Command((pos & 0x0F)|0xC0);	/* Command of first row and required position<16 */
+	LCD_String(str);		/* Call LCD string function */
+}
   82:	9b b3       	in	r25, 0x1b	; 27
   84:	9f 70       	andi	r25, 0x0F	; 15
   86:	28 2f       	mov	r18, r24
@@ -209,6 +215,12 @@ Disassembly of section .text:
  180:	08 95       	ret
 
 00000182 <LCD_Clear>:
+/*
+
+*/
+void LCD_Clear()
+{
+	LCD_Command (0x01);		/* Clear display */
  182:	81 e0       	ldi	r24, 0x01	; 1
  184:	0e 94 41 00 	call	0x82	; 0x82 <LCD_Command>
 	#else
@@ -223,24 +235,26 @@ Disassembly of section .text:
  18e:	f1 f7       	brne	.-4      	; 0x18c <LCD_Clear+0xa>
  190:	00 c0       	rjmp	.+0      	; 0x192 <LCD_Clear+0x10>
  192:	00 00       	nop
+	_delay_ms(2);
+	LCD_Command (0x80);		/* Cursor at home position */
  194:	80 e8       	ldi	r24, 0x80	; 128
  196:	0e 94 41 00 	call	0x82	; 0x82 <LCD_Command>
  19a:	08 95       	ret
 
 0000019c <ADC_Init>:
-#include "lcd.h"
 
 #define degree_sysmbol 0xdf
+#define ADMUX0		0
 
 void ADC_Init(){										
 	DDRA = 0xF0;							        /* Make ADC port as input */
  19c:	80 ef       	ldi	r24, 0xF0	; 240
  19e:	8a bb       	out	0x1a, r24	; 26
-	ADCSRA = 0x87;									/* Enable ADC, with freq/128  */
- 1a0:	87 e8       	ldi	r24, 0x87	; 135
+	ADCSRA =(1<<ADPS0) | (1<<ADPS1)	|(1<<ADPS2) | (1<<ADATE) | (1<<ADEN);							/* Enable ADC, with freq/128  */
+ 1a0:	87 ea       	ldi	r24, 0xA7	; 167
  1a2:	86 b9       	out	0x06, r24	; 6
-	ADMUX = 0x40;									/* Vref: Avcc, ADC channel: 0 */
- 1a4:	80 e4       	ldi	r24, 0x40	; 64
+	ADMUX =(1<<REFS0) | (1<<REFS1) |(1<<ADMUX0);		/* Vref: Internal , ADC channel: 1 */
+ 1a4:	81 ec       	ldi	r24, 0xC1	; 193
  1a6:	87 b9       	out	0x07, r24	; 7
  1a8:	08 95       	ret
 
@@ -249,9 +263,9 @@ void ADC_Init(){
 
 int ADC_Read(char channel)							
 {
-	ADMUX = 0x40 | (channel & 0x07);				/* set input channel to read */
+	ADMUX = 0xC0 | (channel & 0x07);				/* set input channel to read */
  1aa:	87 70       	andi	r24, 0x07	; 7
- 1ac:	80 64       	ori	r24, 0x40	; 64
+ 1ac:	80 6c       	ori	r24, 0xC0	; 192
  1ae:	87 b9       	out	0x07, r24	; 7
 	ADCSRA |= (1<<ADSC);							/* Start ADC conversion */
  1b0:	36 9a       	sbi	0x06, 6	; 6
@@ -1013,7 +1027,7 @@ int main()
  746:	71 f0       	breq	.+28     	; 0x764 <vfprintf+0x12e>
  748:	83 35       	cpi	r24, 0x53	; 83
  74a:	09 f0       	breq	.+2      	; 0x74e <vfprintf+0x118>
- 74c:	59 c0       	rjmp	.+178    	; 0x800 <vfprintf+0x1ca>
+ 74c:	59 c0       	rjmp	.+178    	; 0x800 <__DATA_REGION_LENGTH__>
  74e:	21 c0       	rjmp	.+66     	; 0x792 <vfprintf+0x15c>
  750:	f8 01       	movw	r30, r16
  752:	80 81       	ld	r24, Z
@@ -1100,19 +1114,19 @@ int main()
  7fc:	71 f7       	brne	.-36     	; 0x7da <vfprintf+0x1a4>
  7fe:	e8 c0       	rjmp	.+464    	; 0x9d0 <__stack+0x171>
  800:	84 36       	cpi	r24, 0x64	; 100
- 802:	11 f0       	breq	.+4      	; 0x808 <vfprintf+0x1d2>
+ 802:	11 f0       	breq	.+4      	; 0x808 <__DATA_REGION_LENGTH__+0x8>
  804:	89 36       	cpi	r24, 0x69	; 105
- 806:	41 f5       	brne	.+80     	; 0x858 <vfprintf+0x222>
+ 806:	41 f5       	brne	.+80     	; 0x858 <__DATA_REGION_LENGTH__+0x58>
  808:	f8 01       	movw	r30, r16
  80a:	37 fe       	sbrs	r3, 7
- 80c:	07 c0       	rjmp	.+14     	; 0x81c <vfprintf+0x1e6>
+ 80c:	07 c0       	rjmp	.+14     	; 0x81c <__DATA_REGION_LENGTH__+0x1c>
  80e:	60 81       	ld	r22, Z
  810:	71 81       	ldd	r23, Z+1	; 0x01
  812:	82 81       	ldd	r24, Z+2	; 0x02
  814:	93 81       	ldd	r25, Z+3	; 0x03
  816:	0c 5f       	subi	r16, 0xFC	; 252
  818:	1f 4f       	sbci	r17, 0xFF	; 255
- 81a:	08 c0       	rjmp	.+16     	; 0x82c <vfprintf+0x1f6>
+ 81a:	08 c0       	rjmp	.+16     	; 0x82c <__DATA_REGION_LENGTH__+0x2c>
  81c:	60 81       	ld	r22, Z
  81e:	71 81       	ldd	r23, Z+1	; 0x01
  820:	07 2e       	mov	r0, r23
@@ -1125,7 +1139,7 @@ int main()
  82e:	ff 76       	andi	r31, 0x6F	; 111
  830:	3f 2e       	mov	r3, r31
  832:	97 ff       	sbrs	r25, 7
- 834:	09 c0       	rjmp	.+18     	; 0x848 <vfprintf+0x212>
+ 834:	09 c0       	rjmp	.+18     	; 0x848 <__DATA_REGION_LENGTH__+0x48>
  836:	90 95       	com	r25
  838:	80 95       	com	r24
  83a:	70 95       	com	r23
