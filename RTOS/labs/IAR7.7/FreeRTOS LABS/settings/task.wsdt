@@ -1,0 +1,79 @@
+<?xml version="1.0" encoding="iso-8859-1"?>
+
+<Workspace>
+  <ConfigDictionary>
+    
+    
+    
+  <CurrentConfigs><Project>idle hook/Debug</Project><Project>queue2/Debug</Project><Project>task/Debug</Project><Project>queue S-R/Debug</Project><Project>task delay/Debug</Project><Project>task parameters/Debug</Project><Project>task priority set-get/Debug</Project><Project>task periorities/Debug</Project></CurrentConfigs><CurrentProj>idle hook</CurrentProj><OverviewSelected>1</OverviewSelected></ConfigDictionary>
+  <Desktop>
+    <Static>
+      <Workspace>
+        <ColumnWidths>
+          
+          
+          
+          
+        <Column0>198</Column0><Column1>27</Column1><Column2>27</Column2><Column3>27</Column3></ColumnWidths>
+      </Workspace>
+      <Debug-Log>
+        
+        
+      <ColumnWidth0>20</ColumnWidth0><ColumnWidth1>1307</ColumnWidth1></Debug-Log>
+      <Build>
+        
+        
+        
+        
+      <ColumnWidth0>20</ColumnWidth0><ColumnWidth1>980</ColumnWidth1><ColumnWidth2>261</ColumnWidth2><ColumnWidth3>65</ColumnWidth3></Build>
+      <TerminalIO/>
+    </Static>
+    <Windows>
+      
+      
+    <Wnd2>
+        <Tabs>
+          <Tab>
+            <Identity>TabID-8776-9253</Identity>
+            <TabName>Workspace</TabName>
+            <Factory>Workspace</Factory>
+            <Session>
+              
+            <NodeDict><ExpandedNode>&lt;ws&gt;</ExpandedNode><ExpandedNode>idle hook</ExpandedNode><ExpandedNode>queue S-R</ExpandedNode><ExpandedNode>queue S-R/app</ExpandedNode><ExpandedNode>queue S-R/app/src</ExpandedNode><ExpandedNode>queue2</ExpandedNode><ExpandedNode>queue2/RTOS</ExpandedNode><ExpandedNode>queue2/RTOS/config</ExpandedNode><ExpandedNode>queue2/app</ExpandedNode><ExpandedNode>queue2/app/inc</ExpandedNode><ExpandedNode>queue2/app/src</ExpandedNode><ExpandedNode>task</ExpandedNode><ExpandedNode>task delay</ExpandedNode><ExpandedNode>task delay/app</ExpandedNode><ExpandedNode>task delay/app/src</ExpandedNode><ExpandedNode>task parameters</ExpandedNode><ExpandedNode>task parameters/RTOS</ExpandedNode><ExpandedNode>task parameters/RTOS/config</ExpandedNode><ExpandedNode>task parameters/app</ExpandedNode><ExpandedNode>task periorities</ExpandedNode><ExpandedNode>task priority set-get</ExpandedNode><ExpandedNode>task/RTOS</ExpandedNode><ExpandedNode>task/RTOS/config</ExpandedNode><ExpandedNode>task/RTOS/portable</ExpandedNode><ExpandedNode>task/RTOS/portable/CM4F</ExpandedNode><ExpandedNode>task/Target</ExpandedNode><ExpandedNode>task/Target/startup</ExpandedNode><ExpandedNode>task/app</ExpandedNode><ExpandedNode>task/app/src</ExpandedNode></NodeDict></Session>
+          </Tab>
+        </Tabs>
+        
+      <SelectedTab>0</SelectedTab></Wnd2><Wnd3>
+        <Tabs>
+          <Tab>
+            <Identity>TabID-19817-9455</Identity>
+            <TabName>Debug Log</TabName>
+            <Factory>Debug-Log</Factory>
+            <Session/>
+          </Tab>
+          <Tab>
+            <Identity>TabID-4887-9530</Identity>
+            <TabName>Build</TabName>
+            <Factory>Build</Factory>
+            <Session/>
+          </Tab>
+        </Tabs>
+        
+      <SelectedTab>1</SelectedTab></Wnd3></Windows>
+    <Editor>
+      
+      
+      
+      
+    <Pane><Tab><Factory>TextEditor</Factory><Filename>$WS_DIR$\examples\queues\1.queue S-R\S_RTasks.c</Filename><XPos>0</XPos><YPos>0</YPos><SelStart>0</SelStart><SelEnd>0</SelEnd><XPos2>0</XPos2><YPos2>69</YPos2><SelStart2>4109</SelStart2><SelEnd2>4109</SelEnd2></Tab><Tab><Factory>TextEditor</Factory><Filename>$WS_DIR$\examples\queues\1.queue S-R\main.c</Filename><XPos>0</XPos><YPos>0</YPos><SelStart>0</SelStart><SelEnd>0</SelEnd><XPos2>0</XPos2><YPos2>0</YPos2><SelStart2>82</SelStart2><SelEnd2>82</SelEnd2></Tab><ActiveTab>1</ActiveTab></Pane><ActivePane>0</ActivePane><Sizes><Pane><X>1000000</X><Y>1000000</Y></Pane></Sizes><SplitMode>1</SplitMode></Editor>
+    <Positions>
+      
+      
+      
+      
+      
+    <Top><Row0><Sizes><Toolbar-0526E730><key>iaridepm.enu1</key></Toolbar-0526E730></Sizes></Row0></Top><Left><Row0><Sizes><Wnd2><Rect><Top>-2</Top><Left>-2</Left><Bottom>442</Bottom><Right>272</Right><x>-2</x><y>-2</y><xscreen>200</xscreen><yscreen>200</yscreen><sizeHorzCX>146413</sizeHorzCX><sizeHorzCY>291971</sizeHorzCY><sizeVertCX>200586</sizeVertCX><sizeVertCY>648175</sizeVertCY></Rect></Wnd2></Sizes></Row0></Left><Right><Row0><Sizes/></Row0></Right><Bottom><Row0><Sizes><Wnd3><Rect><Top>-2</Top><Left>-2</Left><Bottom>198</Bottom><Right>1368</Right><x>-2</x><y>-2</y><xscreen>1370</xscreen><yscreen>200</yscreen><sizeHorzCX>1002928</sizeHorzCX><sizeHorzCY>291971</sizeHorzCY><sizeVertCX>146413</sizeVertCX><sizeVertCY>291971</sizeVertCY></Rect></Wnd3></Sizes></Row0></Bottom><Float><Sizes/></Float></Positions>
+  </Desktop>
+</Workspace>
+
+

@@ -1,0 +1,21 @@
+
+**** Build of configuration Debug for project FREERTOS_LAB4 ****
+
+"C:\\ti\\ccsv6\\utils\\bin\\gmake" -k all 
+'Building file: ../main.c'
+'Invoking: ARM Compiler'
+"C:/ti/ccsv6/tools/compiler/ti-cgt-arm_15.12.1.LTS/bin/armcl" -mv7M4 --code_state=16 --float_support=FPv4SPD16 --abi=eabi -me --include_path="C:/ti/ccsv6/tools/compiler/ti-cgt-arm_15.12.1.LTS/include" -g --gcc --define=ccs="ccs" --define=PART_TM4C1231H6PM --diag_wrap=off --diag_warning=225 --display_error_number --preproc_with_compile --preproc_dependency="main.d"  "../main.c"
+"..\DIO.h", line 48: warning #93-D: identifier-list parameters may only be used in a function definition
+"..\DIO.h", line 49: warning #93-D: identifier-list parameters may only be used in a function definition
+"..\DIO.h", line 50: warning #93-D: identifier-list parameters may only be used in a function definition
+"..\DIO.h", line 51: warning #93-D: identifier-list parameters may only be used in a function definition
+'Finished building: ../main.c'
+' '
+'Building target: FREERTOS_LAB4.out'
+'Invoking: ARM Linker'
+"C:/ti/ccsv6/tools/compiler/ti-cgt-arm_15.12.1.LTS/bin/armcl" -mv7M4 --code_state=16 --float_support=FPv4SPD16 --abi=eabi -me -g --gcc --define=ccs="ccs" --define=PART_TM4C1231H6PM --diag_wrap=off --diag_warning=225 --display_error_number -z -m"FREERTOS_LAB4.map" --heap_size=0 --stack_size=512 -i"C:/ti/ccsv6/tools/compiler/ti-cgt-arm_15.12.1.LTS/lib" -i"C:/ti/ccsv6/tools/compiler/ti-cgt-arm_15.12.1.LTS/include" --reread_libs --display_error_number --diag_wrap=off --warn_sections --xml_link_info="FREERTOS_LAB4_linkInfo.xml" --rom_model -o "FREERTOS_LAB4.out" "./DIO.obj" "./PLL.obj" "./UART.obj" "./heap_2.obj" "./list.obj" "./main.obj" "./port.obj" "./portasm.obj" "./queue.obj" "./tasks.obj" "./tm4c1231h6pm_startup_ccs.obj" "../tm4c1231h6pm.cmd"  -llibc.a 
+<Linking>
+'Finished building target: FREERTOS_LAB4.out'
+' '
+
+**** Build Finished ****

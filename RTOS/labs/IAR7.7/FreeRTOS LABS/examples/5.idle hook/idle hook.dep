@@ -1,0 +1,441 @@
+<?xml version="1.0" encoding="iso-8859-1"?>
+
+<project>
+  <fileVersion>2</fileVersion>
+  <fileChecksum>778316709</fileChecksum>
+  <configuration>
+    <name>Debug</name>
+    <outputs>
+      <file>$PROJ_DIR$\Debug\Obj\heap_2.pbi</file>
+      <file>$TOOLKIT_DIR$\lib\shb_l.a</file>
+      <file>$TOOLKIT_DIR$\inc\c\ystdio.h</file>
+      <file>$PROJ_DIR$\Debug\Obj\heap_2.__cstat.et</file>
+      <file>$PROJ_DIR$\Debug\Obj\queue.pbi</file>
+      <file>$PROJ_DIR$\print_task.c</file>
+      <file>$PROJ_DIR$\main.c</file>
+      <file>$PROJ_DIR$\..\..\FreeRTOS\config\FreeRTOSConfig.h</file>
+      <file>$PROJ_DIR$\..\..\FreeRTOS\inc\croutine.h</file>
+      <file>$PROJ_DIR$\..\..\FreeRTOS\inc\deprecated_definitions.h</file>
+      <file>$PROJ_DIR$\Debug\Obj\port.o</file>
+      <file>$PROJ_DIR$\idlehook.h</file>
+      <file>$PROJ_DIR$\..\..\drivers\uart\src\uart.c</file>
+      <file>$PROJ_DIR$\print_task.h</file>
+      <file>$PROJ_DIR$\..\..\drivers\uart\inc\uart.h</file>
+      <file>$PROJ_DIR$\idlehook.c</file>
+      <file>$PROJ_DIR$\..\..\FreeRTOS\inc\task.h</file>
+      <file>$PROJ_DIR$\..\..\target\startup_tm4c.c</file>
+      <file>$PROJ_DIR$\..\..\FreeRTOS\src\tasks.c</file>
+      <file>$PROJ_DIR$\Debug\List\idle hook.map</file>
+      <file>$PROJ_DIR$\..\..\FreeRTOS\portable\MemMang\heap_2.c</file>
+      <file>$TOOLKIT_DIR$\inc\c\stdlib.h</file>
+      <file>$PROJ_DIR$\..\..\FreeRTOS\inc\event_groups.h</file>
+      <file>$PROJ_DIR$\..\..\FreeRTOS\portable\ARM_CM4F\port.c</file>
+      <file>$PROJ_DIR$\Debug\Obj\print_task.pbi</file>
+      <file>$PROJ_DIR$\Debug\Obj\idlehook.__cstat.et</file>
+      <file>$TOOLKIT_DIR$\CMSIS\Include\core_cm4.h</file>
+      <file>$TOOLKIT_DIR$\inc\c\DLib_Product.h</file>
+      <file>$PROJ_DIR$\..\..\FreeRTOS\inc\StackMacros.h</file>
+      <file>$PROJ_DIR$\..\..\FreeRTOS\src\queue.c</file>
+      <file>$PROJ_DIR$\..\..\FreeRTOS\src\list.c</file>
+      <file>$PROJ_DIR$\..\..\FreeRTOS\inc\mpu_wrappers.h</file>
+      <file>$PROJ_DIR$\..\..\FreeRTOS\inc\list.h</file>
+      <file>$PROJ_DIR$\..\..\FreeRTOS\inc\FreeRTOS.h</file>
+      <file>$PROJ_DIR$\..\..\FreeRTOS\inc\portable.h</file>
+      <file>$PROJ_DIR$\..\..\FreeRTOS\inc\projdefs.h</file>
+      <file>$PROJ_DIR$\..\..\FreeRTOS\inc\queue.h</file>
+      <file>$PROJ_DIR$\..\..\FreeRTOS\inc\semphr.h</file>
+      <file>$PROJ_DIR$\..\..\FreeRTOS\inc\timers.h</file>
+      <file>$PROJ_DIR$\..\..\FreeRTOS\portable\ARM_CM4F\portasm.s</file>
+      <file>$PROJ_DIR$\..\..\FreeRTOS\inc\mpu_prototypes.h</file>
+      <file>$PROJ_DIR$\..\..\FreeRTOS\portable\ARM_CM4F\portmacro.h</file>
+      <file>$PROJ_DIR$\..\..\Mcal\TM4C123GH6PM.h</file>
+      <file>$PROJ_DIR$\Debug\Obj\queue.o</file>
+      <file>$TOOLKIT_DIR$\lib\rt7M_tl.a</file>
+      <file>$TOOLKIT_DIR$\lib\dl7M_tln.a</file>
+      <file>$PROJ_DIR$\Debug\Obj\port.pbi</file>
+      <file>$PROJ_DIR$\Debug\Obj\uart.__cstat.et</file>
+      <file>$PROJ_DIR$\Debug\Obj\tasks.o</file>
+      <file>$TOOLKIT_DIR$\inc\c\ycheck.h</file>
+      <file>$TOOLKIT_DIR$\inc\c\DLib_Config_Normal.h</file>
+      <file>$TOOLKIT_DIR$\inc\c\string.h</file>
+      <file>$TOOLKIT_DIR$\CMSIS\Include\core_cmSimd.h</file>
+      <file>$TOOLKIT_DIR$\inc\c\stdio.h</file>
+      <file>$PROJ_DIR$\Debug\Obj\startup_tm4c.__cstat.et</file>
+      <file>$TOOLKIT_DIR$\inc\c\ysizet.h</file>
+      <file>$PROJ_DIR$\Debug\Obj\print_task.__cstat.et</file>
+      <file>$PROJ_DIR$\Debug\Obj\portasm.o</file>
+      <file>$TOOLKIT_DIR$\inc\c\stdint.h</file>
+      <file>$PROJ_DIR$\Debug\Obj\list.pbi</file>
+      <file>$PROJ_DIR$\Debug\Obj\idlehook.o</file>
+      <file>$PROJ_DIR$\Debug\Exe\idle hook.out</file>
+      <file>$TOOLKIT_DIR$\inc\c\stddef.h</file>
+      <file>$PROJ_DIR$\Debug\Obj\main.__cstat.et</file>
+      <file>$PROJ_DIR$\Debug\Obj\main.pbi</file>
+      <file>$PROJ_DIR$\Debug\Obj\tasks.pbi</file>
+      <file>$PROJ_DIR$\Debug\Obj\queue.__cstat.et</file>
+      <file>$TOOLKIT_DIR$\inc\c\yvals.h</file>
+      <file>$PROJ_DIR$\Debug\Obj\uart.pbi</file>
+      <file>$PROJ_DIR$\Debug\Obj\list.__cstat.et</file>
+      <file>$TOOLKIT_DIR$\CMSIS\Include\core_cmFunc.h</file>
+      <file>$TOOLKIT_DIR$\inc\c\DLib_Threads.h</file>
+      <file>$TOOLKIT_DIR$\lib\m7M_tls.a</file>
+      <file>$TOOLKIT_DIR$\inc\c\cmsis_iar.h</file>
+      <file>$TOOLKIT_DIR$\inc\c\intrinsics.h</file>
+      <file>$PROJ_DIR$\Debug\Obj\main.o</file>
+      <file>$TOOLKIT_DIR$\CMSIS\Include\core_cmInstr.h</file>
+      <file>$PROJ_DIR$\Debug\Obj\uart.o</file>
+      <file>$TOOLKIT_DIR$\inc\c\xencoding_limits.h</file>
+      <file>$PROJ_DIR$\Debug\Obj\tasks.__cstat.et</file>
+      <file>$PROJ_DIR$\Debug\Obj\list.o</file>
+      <file>$PROJ_DIR$\Debug\Obj\heap_2.o</file>
+      <file>$TOOLKIT_DIR$\config\linker\TexasInstruments\TM4C123GH6.icf</file>
+      <file>$PROJ_DIR$\Debug\Obj\startup_tm4c.o</file>
+      <file>$PROJ_DIR$\Debug\Obj\idlehook.pbi</file>
+      <file>$PROJ_DIR$\Debug\Obj\print_task.o</file>
+      <file>$PROJ_DIR$\Debug\Exe\task.out</file>
+      <file>$PROJ_DIR$\Debug\Obj\startup_tm4c.pbi</file>
+      <file>$TOOLKIT_DIR$\inc\c\DLib_Product_string.h</file>
+      <file>$PROJ_DIR$\Debug\Obj\port.__cstat.et</file>
+      <file>$PROJ_DIR$\Debug\Exe\task delay.out</file>
+      <file>$TOOLKIT_DIR$\inc\c\DLib_Defaults.h</file>
+      <file>$PROJ_DIR$\Debug\Obj\idle hook.pbd</file>
+    </outputs>
+    <file>
+      <name>[ROOT_NODE]</name>
+      <outputs>
+        <tool>
+          <name>ILINK</name>
+          <file> 61 19</file>
+        </tool>
+      </outputs>
+    </file>
+    <file>
+      <name>$PROJ_DIR$\print_task.c</name>
+      <outputs>
+        <tool>
+          <name>BICOMP</name>
+          <file> 24</file>
+        </tool>
+        <tool>
+          <name>ICCARM</name>
+          <file> 85</file>
+        </tool>
+        <tool>
+          <name>__cstat</name>
+          <file> 56</file>
+        </tool>
+      </outputs>
+      <inputs>
+        <tool>
+          <name>BICOMP</name>
+          <file> 76 67 49 42 13 7 55 16 62 34 71 9 74 53 33 14 11 58 35 91 78 50 27 41 31 32 51 21 26 52 2 70 73 88</file>
+        </tool>
+        <tool>
+          <name>ICCARM</name>
+          <file> 7 33 62 49 67 91 50 27 78 71 55 58 35 34 9 41 74 31 16 32 14 42 26 76 73 70 52 51 88 53 2 21 13 11</file>
+        </tool>
+      </inputs>
+    </file>
+    <file>
+      <name>$PROJ_DIR$\main.c</name>
+      <outputs>
+        <tool>
+          <name>BICOMP</name>
+          <file> 64</file>
+        </tool>
+        <tool>
+          <name>ICCARM</name>
+          <file> 75</file>
+        </tool>
+        <tool>
+          <name>__cstat</name>
+          <file> 63</file>
+        </tool>
+      </outputs>
+      <inputs>
+        <tool>
+          <name>BICOMP</name>
+          <file> 76 67 49 42 13 7 55 16 62 34 71 9 74 53 33 14 11 58 35 91 78 50 27 41 31 32 51 21 26 52 2 70 73 88</file>
+        </tool>
+        <tool>
+          <name>ICCARM</name>
+          <file> 7 33 62 49 67 91 50 27 78 71 55 58 35 34 9 41 74 31 16 32 14 42 26 76 73 70 52 51 88 53 2 21 13 11</file>
+        </tool>
+      </inputs>
+    </file>
+    <file>
+      <name>$PROJ_DIR$\..\..\drivers\uart\src\uart.c</name>
+      <outputs>
+        <tool>
+          <name>BICOMP</name>
+          <file> 68</file>
+        </tool>
+        <tool>
+          <name>ICCARM</name>
+          <file> 77</file>
+        </tool>
+        <tool>
+          <name>__cstat</name>
+          <file> 47</file>
+        </tool>
+      </outputs>
+      <inputs>
+        <tool>
+          <name>BICOMP</name>
+          <file> 71 67 73 51 55 58 21 49 70 2 42 53 91 78 50 27 26 88 14 76 52 74</file>
+        </tool>
+        <tool>
+          <name>ICCARM</name>
+          <file> 14 58 49 67 91 50 27 78 71 42 26 76 73 74 70 52 51 55 88 53 2 21</file>
+        </tool>
+      </inputs>
+    </file>
+    <file>
+      <name>$PROJ_DIR$\idlehook.c</name>
+      <outputs>
+        <tool>
+          <name>BICOMP</name>
+          <file> 84</file>
+        </tool>
+        <tool>
+          <name>ICCARM</name>
+          <file> 60</file>
+        </tool>
+        <tool>
+          <name>__cstat</name>
+          <file> 25</file>
+        </tool>
+      </outputs>
+      <inputs>
+        <tool>
+          <name>BICOMP</name>
+          <file> 76 67 62 49 9 53 13 34 71 74 16 7 55 42 33 14 11 58 35 91 78 50 27 41 31 32 51 21 26 52 2 70 73 88</file>
+        </tool>
+        <tool>
+          <name>ICCARM</name>
+          <file> 7 33 62 49 67 91 50 27 78 71 55 58 35 34 9 41 74 31 16 32 14 42 26 76 73 70 52 51 88 53 2 21 13 11</file>
+        </tool>
+      </inputs>
+    </file>
+    <file>
+      <name>$PROJ_DIR$\..\..\target\startup_tm4c.c</name>
+      <outputs>
+        <tool>
+          <name>BICOMP</name>
+          <file> 87</file>
+        </tool>
+        <tool>
+          <name>ICCARM</name>
+          <file> 83</file>
+        </tool>
+        <tool>
+          <name>__cstat</name>
+          <file> 54</file>
+        </tool>
+      </outputs>
+      <inputs>
+        <tool>
+          <name>BICOMP</name>
+          <file> 27 76 91 49 26 52 78 50 74 42 58 70 67 71 73</file>
+        </tool>
+        <tool>
+          <name>ICCARM</name>
+          <file> 42 26 58 49 67 91 50 27 78 71 76 73 74 70 52</file>
+        </tool>
+      </inputs>
+    </file>
+    <file>
+      <name>$PROJ_DIR$\..\..\FreeRTOS\src\tasks.c</name>
+      <outputs>
+        <tool>
+          <name>BICOMP</name>
+          <file> 65</file>
+        </tool>
+        <tool>
+          <name>ICCARM</name>
+          <file> 48</file>
+        </tool>
+        <tool>
+          <name>__cstat</name>
+          <file> 79</file>
+        </tool>
+      </outputs>
+      <inputs>
+        <tool>
+          <name>BICOMP</name>
+          <file> 49 35 16 67 88 28 31 32 51 33 38 55 71 58 41 21 78 91 50 27 62 7 34 9 74</file>
+        </tool>
+        <tool>
+          <name>ICCARM</name>
+          <file> 21 49 67 91 50 27 78 71 55 51 88 33 62 58 7 35 34 9 41 74 31 16 32 38 28</file>
+        </tool>
+      </inputs>
+    </file>
+    <file>
+      <name>$PROJ_DIR$\..\..\FreeRTOS\portable\MemMang\heap_2.c</name>
+      <outputs>
+        <tool>
+          <name>BICOMP</name>
+          <file> 0</file>
+        </tool>
+        <tool>
+          <name>ICCARM</name>
+          <file> 81</file>
+        </tool>
+        <tool>
+          <name>__cstat</name>
+          <file> 3</file>
+        </tool>
+      </outputs>
+      <inputs>
+        <tool>
+          <name>BICOMP</name>
+          <file> 78 62 50 67 31 33 49 27 34 32 16 55 91 71 7 41 74 21 58 35 9</file>
+        </tool>
+        <tool>
+          <name>ICCARM</name>
+          <file> 21 49 67 91 50 27 78 71 55 33 62 58 7 35 34 9 41 74 31 16 32</file>
+        </tool>
+      </inputs>
+    </file>
+    <file>
+      <name>$PROJ_DIR$\..\..\FreeRTOS\portable\ARM_CM4F\port.c</name>
+      <outputs>
+        <tool>
+          <name>BICOMP</name>
+          <file> 46</file>
+        </tool>
+        <tool>
+          <name>ICCARM</name>
+          <file> 10</file>
+        </tool>
+        <tool>
+          <name>__cstat</name>
+          <file> 89</file>
+        </tool>
+      </outputs>
+      <inputs>
+        <tool>
+          <name>BICOMP</name>
+          <file> 49 78 35 71 16 58 67 41 74 33 62 7 34 55 91 31 32 50 27 9</file>
+        </tool>
+        <tool>
+          <name>ICCARM</name>
+          <file> 74 49 33 62 67 91 50 27 78 71 55 58 7 35 34 9 41 31 16 32</file>
+        </tool>
+      </inputs>
+    </file>
+    <file>
+      <name>$PROJ_DIR$\..\..\FreeRTOS\src\queue.c</name>
+      <outputs>
+        <tool>
+          <name>BICOMP</name>
+          <file> 4</file>
+        </tool>
+        <tool>
+          <name>ICCARM</name>
+          <file> 43</file>
+        </tool>
+        <tool>
+          <name>__cstat</name>
+          <file> 66</file>
+        </tool>
+      </outputs>
+      <inputs>
+        <tool>
+          <name>BICOMP</name>
+          <file> 35 49 67 27 16 78 50 58 55 9 51 33 36 91 71 88 62 7 34 41 31 74 32 21</file>
+        </tool>
+        <tool>
+          <name>ICCARM</name>
+          <file> 21 49 67 91 50 27 78 71 55 51 88 33 62 58 7 35 34 9 41 74 31 16 32 36</file>
+        </tool>
+      </inputs>
+    </file>
+    <file>
+      <name>$PROJ_DIR$\..\..\FreeRTOS\src\list.c</name>
+      <outputs>
+        <tool>
+          <name>BICOMP</name>
+          <file> 59</file>
+        </tool>
+        <tool>
+          <name>ICCARM</name>
+          <file> 80</file>
+        </tool>
+        <tool>
+          <name>__cstat</name>
+          <file> 69</file>
+        </tool>
+      </outputs>
+      <inputs>
+        <tool>
+          <name>BICOMP</name>
+          <file> 9 55 49 78 71 32 91 58 33 67 50 27 35 21 62 7 34 41 31 74</file>
+        </tool>
+        <tool>
+          <name>ICCARM</name>
+          <file> 21 49 67 91 50 27 78 71 55 33 62 58 7 35 34 9 41 74 31 32</file>
+        </tool>
+      </inputs>
+    </file>
+    <file>
+      <name>$PROJ_DIR$\..\..\FreeRTOS\portable\ARM_CM4F\portasm.s</name>
+      <outputs>
+        <tool>
+          <name>AARM</name>
+          <file> 57</file>
+        </tool>
+      </outputs>
+      <inputs>
+        <tool>
+          <name>AARM</name>
+          <file> 7</file>
+        </tool>
+      </inputs>
+    </file>
+    <file>
+      <name>$PROJ_DIR$\Debug\Exe\idle hook.out</name>
+      <outputs>
+        <tool>
+          <name>ILINK</name>
+          <file> 19</file>
+        </tool>
+      </outputs>
+      <inputs>
+        <tool>
+          <name>ILINK</name>
+          <file> 82 81 60 80 75 10 57 85 43 83 48 77 1 44 72 45</file>
+        </tool>
+      </inputs>
+    </file>
+    <file>
+      <name>$PROJ_DIR$\Debug\Exe\task.out</name>
+      <inputs>
+        <tool>
+          <name>ILINK</name>
+          <file> 82 81 80 75 10 57 85 43 83 48 77 1 44 72 45</file>
+        </tool>
+      </inputs>
+    </file>
+    <file>
+      <name>$PROJ_DIR$\Debug\Exe\task delay.out</name>
+      <inputs>
+        <tool>
+          <name>ILINK</name>
+          <file> 82 81 80 75 10 57 85 43 83 48 77 1 44 72 45</file>
+        </tool>
+      </inputs>
+    </file>
+  </configuration>
+  <configuration>
+    <name>Release</name>
+    <outputs/>
+    <forcedrebuild>
+      <name>[MULTI_TOOL]</name>
+      <tool>ILINK</tool>
+    </forcedrebuild>
+  </configuration>
+</project>
+
+

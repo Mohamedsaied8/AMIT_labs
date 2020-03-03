@@ -1,0 +1,31 @@
+<?xml version="1.0" encoding="iso-8859-1"?>
+
+<workspace>
+  <project>
+    <path>$WS_DIR$\examples\5.idle hook\idle hook.ewp</path>
+  </project>
+  <project>
+    <path>$WS_DIR$\examples\queues\1.queue S-R\queue S-R.ewp</path>
+  </project>
+  <project>
+    <path>$WS_DIR$\examples\queues\2.queue S-R-2\queue2.ewp</path>
+  </project>
+  <project>
+    <path>$WS_DIR$\examples\1.task creation\task.ewp</path>
+  </project>
+  <project>
+    <path>$WS_DIR$\examples\4.task delay\task delay.ewp</path>
+  </project>
+  <project>
+    <path>$WS_DIR$\examples\2.task parameters\task parameters.ewp</path>
+  </project>
+  <project>
+    <path>$WS_DIR$\examples\3.task periorities\task periorities.ewp</path>
+  </project>
+  <project>
+    <path>$WS_DIR$\examples\5.task priority set-get\task priority set-get.ewp</path>
+  </project>
+  <batchBuild/>
+</workspace>
+
+

@@ -1,0 +1,449 @@
+###############################################################################
+#
+# IAR ELF Linker V7.70.2.11706/W32 for ARM                17/Oct/2016  18:12:28
+# Copyright 2007-2016 IAR Systems AB.
+#
+#    Output file  =  E:\FreeRTOS\IAR\task\creating task\Debug\Exe\c.out
+#    Map file     =  E:\FreeRTOS\IAR\task\creating task\Debug\List\c.map
+#    Command line =  
+#        "E:\FreeRTOS\IAR\task\creating task\Debug\Obj\heap_2.o"
+#        "E:\FreeRTOS\IAR\task\creating task\Debug\Obj\list.o"
+#        "E:\FreeRTOS\IAR\task\creating task\Debug\Obj\main.o"
+#        "E:\FreeRTOS\IAR\task\creating task\Debug\Obj\port.o"
+#        "E:\FreeRTOS\IAR\task\creating task\Debug\Obj\portasm.o"
+#        "E:\FreeRTOS\IAR\task\creating task\Debug\Obj\print_task.o"
+#        "E:\FreeRTOS\IAR\task\creating task\Debug\Obj\queue.o"
+#        "E:\FreeRTOS\IAR\task\creating task\Debug\Obj\startup_tm4c.o"
+#        "E:\FreeRTOS\IAR\task\creating task\Debug\Obj\tasks.o"
+#        "E:\FreeRTOS\IAR\task\creating task\Debug\Obj\uart.o" -o
+#        "E:\FreeRTOS\IAR\task\creating task\Debug\Exe\c.out" --redirect
+#        _Printf=_PrintfFull --redirect _Scanf=_ScanfFull --map
+#        "E:\FreeRTOS\IAR\task\creating task\Debug\List\c.map" --config
+#        "C:\Program Files (x86)\IAR Systems\Embedded Workbench
+#        7.5\arm\config\linker\TexasInstruments\TM4C123GH6.icf" --semihosting
+#        --entry __iar_program_start --vfe
+#
+###############################################################################
+
+*******************************************************************************
+*** RUNTIME MODEL ATTRIBUTES
+***
+
+CppFlavor       = *
+__SystemLibrary = DLib
+
+
+*******************************************************************************
+*** PLACEMENT SUMMARY
+***
+
+"A0":  place at 0x00000000 { ro section .intvec };
+"P1":  place in [from 0x00000000 to 0x0003ffff] { ro };
+"P2":  place in [from 0x20000000 to 0x20007fff] { rw, block CSTACK, block HEAP };
+initialize by copy { rw };
+
+  Section            Kind        Address    Size  Object
+  -------            ----        -------    ----  ------
+"A0":                                      0x26c
+  .intvec            const    0x00000000   0x26c  startup_tm4c.o [1]
+                            - 0x0000026c   0x26c
+
+"P1":                                      0xf94
+  .text              ro code  0x0000026c   0x5dc  tasks.o [1]
+  .text              ro code  0x00000848   0x130  heap_2.o [1]
+  .text              ro code  0x00000978    0x66  ABImemset.o [5]
+  .text              ro code  0x000009de    0x62  list.o [1]
+  .text              ro code  0x00000a40   0x100  port.o [1]
+  CODE               ro code  0x00000b40    0xa8  portasm.o [1]
+  .text              ro code  0x00000be8   0x16c  DblSub.o [4]
+  .text              ro code  0x00000d54   0x116  uart.o [1]
+  .rodata            const    0x00000e6a     0x2  heap_2.o [1]
+  .text              ro code  0x00000e6c    0x4e  FltToDbl.o [4]
+  .text              ro code  0x00000ebc    0xe8  DblAdd.o [4]
+  .text              ro code  0x00000fa4    0x2c  DblToI32.o [4]
+  .text              ro code  0x00000fd0    0x54  main.o [1]
+  .text              ro code  0x00001024    0x4c  print_task.o [1]
+  .text              ro code  0x00001070    0x40  zero_init3.o [5]
+  .text              ro code  0x000010b0    0x2c  copy_init3.o [5]
+  .text              ro code  0x000010dc    0x28  data_init.o [5]
+  .text              ro code  0x00001104    0x22  fpinit_M.o [4]
+  .iar.init_table    const    0x00001128    0x24  - Linker created -
+  .rodata            const    0x0000114c    0x1c  print_task.o [1]
+  .rodata            const    0x00001168    0x1c  print_task.o [1]
+  .text              ro code  0x00001184    0x1a  cmain.o [5]
+  .text              ro code  0x0000119e     0x4  low_level_init.o [3]
+  .text              ro code  0x000011a2     0x4  exit.o [3]
+  .text              ro code  0x000011a8     0xa  cexit.o [5]
+  .text              ro code  0x000011b4    0x14  exit.o [6]
+  .text              ro code  0x000011c8     0xc  startup_tm4c.o [1]
+  .text              ro code  0x000011d4     0xc  cstartup_M.o [5]
+  .rodata            const    0x000011e0     0x8  main.o [1]
+  .rodata            const    0x000011e8     0x8  main.o [1]
+  .rodata            const    0x000011f0     0x8  tasks.o [1]
+  Initializer bytes  const    0x000011f8     0x8  <for P2-1>
+  .rodata            const    0x00001200     0x0  zero_init3.o [5]
+  .rodata            const    0x00001200     0x0  copy_init3.o [5]
+                            - 0x00001200   0xf94
+
+"P2", part 1 of 3:                           0x8
+  P2-1                        0x20000000     0x8  <Init block>
+    .data            inited   0x20000000     0x4  heap_2.o [1]
+    .data            inited   0x20000004     0x4  port.o [1]
+                            - 0x20000008     0x8
+
+"P2", part 2 of 3:                        0x1000
+  CSTACK                      0x20000008  0x1000  <Block>
+    CSTACK           uninit   0x20000008  0x1000  <Block tail>
+                            - 0x20001008  0x1000
+
+"P2", part 3 of 3:                        0x2918
+  .bss               zero     0x20001008  0x2800  heap_2.o [1]
+  .bss               zero     0x20003808    0x64  tasks.o [1]
+  .bss               zero     0x2000386c    0x14  tasks.o [1]
+  .bss               zero     0x20003880    0x14  tasks.o [1]
+  .bss               zero     0x20003894    0x14  tasks.o [1]
+  .bss               zero     0x200038a8    0x14  tasks.o [1]
+  .bss               zero     0x200038bc    0x14  tasks.o [1]
+  .bss               zero     0x200038d0     0x8  heap_2.o [1]
+  .bss               zero     0x200038d8     0x8  heap_2.o [1]
+  .bss               zero     0x200038e0     0x4  heap_2.o [1]
+  .bss               zero     0x200038e4     0x4  tasks.o [1]
+  .bss               zero     0x200038e8     0x4  tasks.o [1]
+  .bss               zero     0x200038ec     0x4  tasks.o [1]
+  .bss               zero     0x200038f0     0x4  tasks.o [1]
+  .bss               zero     0x200038f4     0x4  tasks.o [1]
+  .bss               zero     0x200038f8     0x4  tasks.o [1]
+  .bss               zero     0x200038fc     0x4  tasks.o [1]
+  .bss               zero     0x20003900     0x4  tasks.o [1]
+  .bss               zero     0x20003904     0x4  tasks.o [1]
+  .bss               zero     0x20003908     0x4  tasks.o [1]
+  .bss               zero     0x2000390c     0x4  tasks.o [1]
+  .bss               zero     0x20003910     0x4  tasks.o [1]
+  .bss               zero     0x20003914     0x4  tasks.o [1]
+  .bss               zero     0x20003918     0x4  tasks.o [1]
+  .bss               zero     0x2000391c     0x4  tasks.o [1]
+                            - 0x20003920  0x2918
+
+
+*******************************************************************************
+*** INIT TABLE
+***
+
+          Address     Size
+          -------     ----
+Zero (__iar_zero_init3)
+    1 destination range, total size 0x2918:
+          0x20001008  0x2918
+
+Copy (__iar_copy_init3)
+    1 source range, total size 0x8:
+          0x000011f8     0x8
+    1 destination range, total size 0x8:
+          0x20000000     0x8
+
+
+
+*******************************************************************************
+*** MODULE SUMMARY
+***
+
+    Module            ro code  ro data  rw data
+    ------            -------  -------  -------
+E:\FreeRTOS\IAR\task\creating task\Debug\Obj: [1]
+    heap_2.o              304        6   10 264
+    list.o                 98
+    main.o                 84       16
+    port.o                256        4        4
+    portasm.o             168
+    print_task.o           76       56
+    startup_tm4c.o         12      620
+    tasks.o             1 500        8      260
+    uart.o                278
+    -------------------------------------------
+    Total:              2 776      710   10 528
+
+command line: [2]
+    -------------------------------------------
+    Total:
+
+dl7M_tln.a: [3]
+    exit.o                  4
+    low_level_init.o        4
+    -------------------------------------------
+    Total:                  8
+
+m7M_tls.a: [4]
+    DblAdd.o              232
+    DblSub.o              364
+    DblToI32.o             44
+    FltToDbl.o             78
+    fpinit_M.o             34
+    -------------------------------------------
+    Total:                752
+
+rt7M_tl.a: [5]
+    ABImemset.o           102
+    cexit.o                10
+    cmain.o                26
+    copy_init3.o           44
+    cstartup_M.o           12
+    data_init.o            40
+    zero_init3.o           64
+    -------------------------------------------
+    Total:                298
+
+shb_l.a: [6]
+    exit.o                 20
+    -------------------------------------------
+    Total:                 20
+
+    Gaps                    6        2
+    Linker created                  36    4 096
+-----------------------------------------------
+    Grand Total:        3 860      748   14 624
+
+
+*******************************************************************************
+*** ENTRY LIST
+***
+
+Entry                      Address    Size  Type      Object
+-----                      -------    ----  ----      ------
+.iar.init_table$$Base   0x00001128           --   Gb  - Linker created -
+.iar.init_table$$Limit  0x0000114c           --   Gb  - Linker created -
+?main                   0x00001185          Code  Gb  cmain.o [5]
+ADC1Seq0_IRQHandler     0x000011d3     0x2  Code  Wk  startup_tm4c.o [1]
+ADC1Seq1_IRQHandler     0x000011d3     0x2  Code  Wk  startup_tm4c.o [1]
+ADC1Seq2_IRQHandler     0x000011d3     0x2  Code  Wk  startup_tm4c.o [1]
+ADC1Seq3_IRQHandler     0x000011d3     0x2  Code  Wk  startup_tm4c.o [1]
+ADCSeq0_IRQHandler      0x000011d3     0x2  Code  Wk  startup_tm4c.o [1]
+ADCSeq1_IRQHandler      0x000011d3     0x2  Code  Wk  startup_tm4c.o [1]
+ADCSeq2_IRQHandler      0x000011d3     0x2  Code  Wk  startup_tm4c.o [1]
+ADCSeq3_IRQHandler      0x000011d3     0x2  Code  Wk  startup_tm4c.o [1]
+BusFault_Handler        0x000011cf     0x2  Code  Gb  startup_tm4c.o [1]
+CAN0_IRQHandler         0x000011d3     0x2  Code  Wk  startup_tm4c.o [1]
+CAN1_IRQHandler         0x000011d3     0x2  Code  Wk  startup_tm4c.o [1]
+CAN2_IRQHandler         0x000011d3     0x2  Code  Wk  startup_tm4c.o [1]
+CSTACK$$Base            0x20000008           --   Gb  - Linker created -
+CSTACK$$Limit           0x20001008          Data  Gb  - Linker created -
+Comp0_IRQHandler        0x000011d3     0x2  Code  Wk  startup_tm4c.o [1]
+Comp1_IRQHandler        0x000011d3     0x2  Code  Wk  startup_tm4c.o [1]
+Comp2_IRQHandler        0x000011d3     0x2  Code  Wk  startup_tm4c.o [1]
+DebugMon_Handler        0x000011d3     0x2  Code  Wk  startup_tm4c.o [1]
+EBI0_IRQHandler         0x000011d3     0x2  Code  Wk  startup_tm4c.o [1]
+FPU_IRQHandler          0x000011d3     0x2  Code  Wk  startup_tm4c.o [1]
+Fan0_IRQHandler         0x000011d3     0x2  Code  Wk  startup_tm4c.o [1]
+FlashCtrl_IRQHandler    0x000011d3     0x2  Code  Wk  startup_tm4c.o [1]
+GPIOPortA_IRQHandler    0x000011d3     0x2  Code  Wk  startup_tm4c.o [1]
+GPIOPortB_IRQHandler    0x000011d3     0x2  Code  Wk  startup_tm4c.o [1]
+GPIOPortC_IRQHandler    0x000011d3     0x2  Code  Wk  startup_tm4c.o [1]
+GPIOPortD_IRQHandler    0x000011d3     0x2  Code  Wk  startup_tm4c.o [1]
+GPIOPortE_IRQHandler    0x000011d3     0x2  Code  Wk  startup_tm4c.o [1]
+GPIOPortF_IRQHandler    0x000011d3     0x2  Code  Wk  startup_tm4c.o [1]
+GPIOPortG_IRQHandler    0x000011d3     0x2  Code  Wk  startup_tm4c.o [1]
+GPIOPortH_IRQHandler    0x000011d3     0x2  Code  Wk  startup_tm4c.o [1]
+GPIOPortJ_IRQHandler    0x000011d3     0x2  Code  Wk  startup_tm4c.o [1]
+GPIOPortK_IRQHandler    0x000011d3     0x2  Code  Wk  startup_tm4c.o [1]
+GPIOPortL_IRQHandler    0x000011d3     0x2  Code  Wk  startup_tm4c.o [1]
+GPIOPortM_IRQHandler    0x000011d3     0x2  Code  Wk  startup_tm4c.o [1]
+GPIOPortN_IRQHandler    0x000011d3     0x2  Code  Wk  startup_tm4c.o [1]
+GPIOPortP0_IRQHandler   0x000011d3     0x2  Code  Wk  startup_tm4c.o [1]
+GPIOPortP1_IRQHandler   0x000011d3     0x2  Code  Wk  startup_tm4c.o [1]
+GPIOPortP2_IRQHandler   0x000011d3     0x2  Code  Wk  startup_tm4c.o [1]
+GPIOPortP3_IRQHandler   0x000011d3     0x2  Code  Wk  startup_tm4c.o [1]
+GPIOPortP4_IRQHandler   0x000011d3     0x2  Code  Wk  startup_tm4c.o [1]
+GPIOPortP5_IRQHandler   0x000011d3     0x2  Code  Wk  startup_tm4c.o [1]
+GPIOPortP6_IRQHandler   0x000011d3     0x2  Code  Wk  startup_tm4c.o [1]
+GPIOPortP7_IRQHandler   0x000011d3     0x2  Code  Wk  startup_tm4c.o [1]
+GPIOPortQ0_IRQHandler   0x000011d3     0x2  Code  Wk  startup_tm4c.o [1]
+GPIOPortQ1_IRQHandler   0x000011d3     0x2  Code  Wk  startup_tm4c.o [1]
+GPIOPortQ2_IRQHandler   0x000011d3     0x2  Code  Wk  startup_tm4c.o [1]
+GPIOPortQ3_IRQHandler   0x000011d3     0x2  Code  Wk  startup_tm4c.o [1]
+GPIOPortQ4_IRQHandler   0x000011d3     0x2  Code  Wk  startup_tm4c.o [1]
+GPIOPortQ5_IRQHandler   0x000011d3     0x2  Code  Wk  startup_tm4c.o [1]
+GPIOPortQ6_IRQHandler   0x000011d3     0x2  Code  Wk  startup_tm4c.o [1]
+GPIOPortQ7_IRQHandler   0x000011d3     0x2  Code  Wk  startup_tm4c.o [1]
+GPIOPortR_IRQHandler    0x000011d3     0x2  Code  Wk  startup_tm4c.o [1]
+GPIOPortS_IRQHandler    0x000011d3     0x2  Code  Wk  startup_tm4c.o [1]
+HardFault_Handler       0x000011c9     0x2  Code  Gb  startup_tm4c.o [1]
+Hibernate_IRQHandler    0x000011d3     0x2  Code  Wk  startup_tm4c.o [1]
+I2C0_IRQHandler         0x000011d3     0x2  Code  Wk  startup_tm4c.o [1]
+I2C1_IRQHandler         0x000011d3     0x2  Code  Wk  startup_tm4c.o [1]
+I2C2_IRQHandler         0x000011d3     0x2  Code  Wk  startup_tm4c.o [1]
+I2C3_IRQHandler         0x000011d3     0x2  Code  Wk  startup_tm4c.o [1]
+I2C4_IRQHandler         0x000011d3     0x2  Code  Wk  startup_tm4c.o [1]
+I2C5_IRQHandler         0x000011d3     0x2  Code  Wk  startup_tm4c.o [1]
+I2S0_IRQHandler         0x000011d3     0x2  Code  Wk  startup_tm4c.o [1]
+LPC0_IRQHandler         0x000011d3     0x2  Code  Wk  startup_tm4c.o [1]
+MemManage_Handler       0x000011cd     0x2  Code  Gb  startup_tm4c.o [1]
+NMI_Handler             0x000011cb     0x2  Code  Gb  startup_tm4c.o [1]
+PECI0_IRQHandler        0x000011d3     0x2  Code  Wk  startup_tm4c.o [1]
+PWM1Fault_IRQHandler    0x000011d3     0x2  Code  Wk  startup_tm4c.o [1]
+PWM1Gen0_IRQHandler     0x000011d3     0x2  Code  Wk  startup_tm4c.o [1]
+PWM1Gen1_IRQHandler     0x000011d3     0x2  Code  Wk  startup_tm4c.o [1]
+PWM1Gen2_IRQHandler     0x000011d3     0x2  Code  Wk  startup_tm4c.o [1]
+PWM1Gen3_IRQHandler     0x000011d3     0x2  Code  Wk  startup_tm4c.o [1]
+PWMFault_IRQHandler     0x000011d3     0x2  Code  Wk  startup_tm4c.o [1]
+PWMGen0_IRQHandler      0x000011d3     0x2  Code  Wk  startup_tm4c.o [1]
+PWMGen1_IRQHandler      0x000011d3     0x2  Code  Wk  startup_tm4c.o [1]
+PWMGen2_IRQHandler      0x000011d3     0x2  Code  Wk  startup_tm4c.o [1]
+PWMGen3_IRQHandler      0x000011d3     0x2  Code  Wk  startup_tm4c.o [1]
+QEI0_IRQHandler         0x000011d3     0x2  Code  Wk  startup_tm4c.o [1]
+QEI1_IRQHandler         0x000011d3     0x2  Code  Wk  startup_tm4c.o [1]
+QEI2_IRQHandler         0x000011d3     0x2  Code  Wk  startup_tm4c.o [1]
+Region$$Table$$Base     0x00001128           --   Gb  - Linker created -
+Region$$Table$$Limit    0x0000114c           --   Gb  - Linker created -
+SSI0_IRQHandler         0x000011d3     0x2  Code  Wk  startup_tm4c.o [1]
+SSI1_IRQHandler         0x000011d3     0x2  Code  Wk  startup_tm4c.o [1]
+SSI2_IRQHandler         0x000011d3     0x2  Code  Wk  startup_tm4c.o [1]
+SSI3_IRQHandler         0x000011d3     0x2  Code  Wk  startup_tm4c.o [1]
+SysCtrl_IRQHandler      0x000011d3     0x2  Code  Wk  startup_tm4c.o [1]
+Timer0A_IRQHandler      0x000011d3     0x2  Code  Wk  startup_tm4c.o [1]
+Timer0B_IRQHandler      0x000011d3     0x2  Code  Wk  startup_tm4c.o [1]
+Timer1A_IRQHandler      0x000011d3     0x2  Code  Wk  startup_tm4c.o [1]
+Timer1B_IRQHandler      0x000011d3     0x2  Code  Wk  startup_tm4c.o [1]
+Timer2A_IRQHandler      0x000011d3     0x2  Code  Wk  startup_tm4c.o [1]
+Timer2B_IRQHandler      0x000011d3     0x2  Code  Wk  startup_tm4c.o [1]
+Timer3A_IRQHandler      0x000011d3     0x2  Code  Wk  startup_tm4c.o [1]
+Timer3B_IRQHandler      0x000011d3     0x2  Code  Wk  startup_tm4c.o [1]
+Timer4A_IRQHandler      0x000011d3     0x2  Code  Wk  startup_tm4c.o [1]
+Timer4B_IRQHandler      0x000011d3     0x2  Code  Wk  startup_tm4c.o [1]
+Timer5A_IRQHandler      0x000011d3     0x2  Code  Wk  startup_tm4c.o [1]
+Timer5B_IRQHandler      0x000011d3     0x2  Code  Wk  startup_tm4c.o [1]
+UART0_IRQHandler        0x000011d3     0x2  Code  Wk  startup_tm4c.o [1]
+UART1_IRQHandler        0x000011d3     0x2  Code  Wk  startup_tm4c.o [1]
+UART2_IRQHandler        0x000011d3     0x2  Code  Wk  startup_tm4c.o [1]
+UART3_IRQHandler        0x000011d3     0x2  Code  Wk  startup_tm4c.o [1]
+UART4_IRQHandler        0x000011d3     0x2  Code  Wk  startup_tm4c.o [1]
+UART5_IRQHandler        0x000011d3     0x2  Code  Wk  startup_tm4c.o [1]
+UART6_IRQHandler        0x000011d3     0x2  Code  Wk  startup_tm4c.o [1]
+UART7_IRQHandler        0x000011d3     0x2  Code  Wk  startup_tm4c.o [1]
+UART_Write              0x00000e0d    0x10  Code  Gb  uart.o [1]
+USB0_IRQHandler         0x000011d3     0x2  Code  Wk  startup_tm4c.o [1]
+Unused_Handler          0x000011d3     0x2  Code  Gb  startup_tm4c.o [1]
+UsageFault_Handler      0x000011d1     0x2  Code  Gb  startup_tm4c.o [1]
+Watchdog_IRQHandler     0x000011d3     0x2  Code  Wk  startup_tm4c.o [1]
+WideTimer0A_IRQHandler  0x000011d3     0x2  Code  Wk  startup_tm4c.o [1]
+WideTimer0B_IRQHandler  0x000011d3     0x2  Code  Wk  startup_tm4c.o [1]
+WideTimer1A_IRQHandler  0x000011d3     0x2  Code  Wk  startup_tm4c.o [1]
+WideTimer1B_IRQHandler  0x000011d3     0x2  Code  Wk  startup_tm4c.o [1]
+WideTimer2A_IRQHandler  0x000011d3     0x2  Code  Wk  startup_tm4c.o [1]
+WideTimer2B_IRQHandler  0x000011d3     0x2  Code  Wk  startup_tm4c.o [1]
+WideTimer3A_IRQHandler  0x000011d3     0x2  Code  Wk  startup_tm4c.o [1]
+WideTimer3B_IRQHandler  0x000011d3     0x2  Code  Wk  startup_tm4c.o [1]
+WideTimer4A_IRQHandler  0x000011d3     0x2  Code  Wk  startup_tm4c.o [1]
+WideTimer4B_IRQHandler  0x000011d3     0x2  Code  Wk  startup_tm4c.o [1]
+WideTimer5A_IRQHandler  0x000011d3     0x2  Code  Wk  startup_tm4c.o [1]
+WideTimer5B_IRQHandler  0x000011d3     0x2  Code  Wk  startup_tm4c.o [1]
+__aeabi_d2uiz           0x00000fa5          Code  Gb  DblToI32.o [4]
+__aeabi_dadd            0x00000ebd          Code  Gb  DblAdd.o [4]
+__aeabi_f2d             0x00000e6d          Code  Gb  FltToDbl.o [4]
+__aeabi_memset          0x00000979          Code  Gb  ABImemset.o [5]
+__cmain                 0x00001185          Code  Gb  cmain.o [5]
+__exit                  0x000011b5    0x14  Code  Gb  exit.o [6]
+__iar_Memset            0x00000979          Code  Gb  ABImemset.o [5]
+__iar_Memset_word       0x00000981          Code  Gb  ABImemset.o [5]
+__iar_copy_init3        0x000010b1    0x2c  Code  Gb  copy_init3.o [5]
+__iar_d2uiz             0x00000fb1          Code  Gb  DblToI32.o [4]
+__iar_dadd              0x00000ed1          Code  Gb  DblAdd.o [4]
+__iar_data_init3        0x000010dd    0x28  Code  Gb  data_init.o [5]
+__iar_dsub              0x00000be9          Code  Gb  DblSub.o [4]
+__iar_dsubStart         0x00000bfb          Code  Gb  DblSub.o [4]
+__iar_init_vfp          0x00001105          Code  Gb  fpinit_M.o [4]
+__iar_program_start     0x000011d5          Code  Gb  cstartup_M.o [5]
+__iar_zero_init3        0x00001071    0x40  Code  Gb  zero_init3.o [5]
+__low_level_init        0x0000119f     0x4  Code  Gb  low_level_init.o [3]
+__vector_table          0x00000000   0x26c  Data  Gb  startup_tm4c.o [1]
+_call_main              0x00001191          Code  Gb  cmain.o [5]
+_exit                   0x000011a9          Code  Gb  cexit.o [5]
+_main                   0x0000119b          Code  Gb  cmain.o [5]
+exit                    0x000011a3     0x4  Code  Gb  exit.o [3]
+heapSTRUCT_SIZE         0x00000e6a     0x2  Data  Lc  heap_2.o [1]
+main                    0x00000fd1    0x54  Code  Gb  main.o [1]
+prvAddNewTaskToReadyList
+                        0x0000037d    0xc0  Code  Lc  tasks.o [1]
+prvCheckTasksWaitingTermination
+                        0x00000751    0x5a  Code  Lc  tasks.o [1]
+prvDeleteTCB            0x000007bd    0x12  Code  Lc  tasks.o [1]
+prvHeapInit             0x00000937    0x2a  Code  Lc  heap_2.o [1]
+prvIdleTask             0x000006cd    0x22  Code  Lc  tasks.o [1]
+prvInitialiseNewTask    0x000002e3    0x9a  Code  Lc  tasks.o [1]
+prvInitialiseTaskLists  0x000006ef    0x52  Code  Lc  tasks.o [1]
+prvResetNextTaskUnblockTime
+                        0x000007cf    0x28  Code  Lc  tasks.o [1]
+prvTaskExitError        0x00000a69    0x10  Code  Lc  port.o [1]
+pvPortMalloc            0x00000849    0xb2  Code  Gb  heap_2.o [1]
+pvPortMalloc::xHeapHasBeenInitialised
+                        0x200038e0     0x4  Data  Lc  heap_2.o [1]
+pxCurrentTCB            0x200038e4     0x4  Data  Gb  tasks.o [1]
+pxDelayedTaskList       0x200038e8     0x4  Data  Lc  tasks.o [1]
+pxOverflowDelayedTaskList
+                        0x200038ec     0x4  Data  Lc  tasks.o [1]
+pxPortInitialiseStack   0x00000a41    0x28  Code  Gb  port.o [1]
+pxReadyTasksLists       0x20003808    0x64  Data  Lc  tasks.o [1]
+uDMAError_IRQHandler    0x000011d3     0x2  Code  Wk  startup_tm4c.o [1]
+uDMAST_IRQHandler       0x000011d3     0x2  Code  Wk  startup_tm4c.o [1]
+uart_init               0x00000d55    0xb8  Code  Gb  uart.o [1]
+uart_write_string       0x00000e55    0x16  Code  Gb  uart.o [1]
+ucHeap                  0x20001008  0x2800  Data  Lc  heap_2.o [1]
+uxCriticalNesting       0x20000004     0x4  Data  Lc  port.o [1]
+uxCurrentNumberOfTasks  0x200038f4     0x4  Data  Lc  tasks.o [1]
+uxDeletedTasksWaitingCleanUp
+                        0x200038f0     0x4  Data  Lc  tasks.o [1]
+uxListRemove            0x00000a1b    0x26  Code  Gb  list.o [1]
+uxPendedTicks           0x20003904     0x4  Data  Lc  tasks.o [1]
+uxSchedulerSuspended    0x2000391c     0x4  Data  Lc  tasks.o [1]
+uxTaskNumber            0x20003910     0x4  Data  Lc  tasks.o [1]
+uxTopReadyPriority      0x200038fc     0x4  Data  Lc  tasks.o [1]
+vListInitialise         0x000009df    0x1e  Code  Gb  list.o [1]
+vListInitialiseItem     0x000009fd     0x6  Code  Gb  list.o [1]
+vListInsertEnd          0x00000a03    0x18  Code  Gb  list.o [1]
+vPortEnableVFP          0x00000bcd          Code  Gb  portasm.o [1]
+vPortEnterCritical      0x00000ab5    0x1a  Code  Gb  port.o [1]
+vPortExitCritical       0x00000acf    0x1a  Code  Gb  port.o [1]
+vPortFree               0x000008fb    0x3c  Code  Gb  heap_2.o [1]
+vPortSVCHandler         0x00000b99          Code  Gb  portasm.o [1]
+vPortSetupTimerInterrupt
+                        0x00000b25    0x1c  Code  Wk  port.o [1]
+vPortStartFirstTask     0x00000bb5          Code  Gb  portasm.o [1]
+vTask1                  0x00001025    0x22  Code  Gb  print_task.o [1]
+vTask2                  0x00001047    0x22  Code  Gb  print_task.o [1]
+vTaskStartScheduler     0x0000043d    0x50  Code  Gb  tasks.o [1]
+vTaskSuspendAll         0x0000048d    0x10  Code  Gb  tasks.o [1]
+vTaskSwitchContext      0x0000067b    0x50  Code  Gb  tasks.o [1]
+xDelayedTaskList1       0x2000386c    0x14  Data  Lc  tasks.o [1]
+xDelayedTaskList2       0x20003880    0x14  Data  Lc  tasks.o [1]
+xEnd                    0x200038d8     0x8  Data  Lc  heap_2.o [1]
+xFreeBytesRemaining     0x20000000     0x4  Data  Lc  heap_2.o [1]
+xIdleTaskHandle         0x20003918     0x4  Data  Lc  tasks.o [1]
+xNextTaskUnblockTime    0x20003914     0x4  Data  Lc  tasks.o [1]
+xNumOfOverflows         0x2000390c     0x4  Data  Lc  tasks.o [1]
+xPendingReadyList       0x20003894    0x14  Data  Lc  tasks.o [1]
+xPortPendSVHandler      0x00000b41          Code  Gb  portasm.o [1]
+xPortStartScheduler     0x00000a79    0x3c  Code  Gb  port.o [1]
+xPortSysTickHandler     0x00000ae9    0x28  Code  Gb  port.o [1]
+xSchedulerRunning       0x20003900     0x4  Data  Lc  tasks.o [1]
+xStart                  0x200038d0     0x8  Data  Lc  heap_2.o [1]
+xSuspendedTaskList      0x200038bc    0x14  Data  Lc  tasks.o [1]
+xTaskCreate             0x0000026d    0x76  Code  Gb  tasks.o [1]
+xTaskIncrementTick      0x0000057d    0xfe  Code  Gb  tasks.o [1]
+xTaskResumeAll          0x0000049d    0xe0  Code  Gb  tasks.o [1]
+xTasksWaitingTermination
+                        0x200038a8    0x14  Data  Lc  tasks.o [1]
+xTickCount              0x200038f8     0x4  Data  Lc  tasks.o [1]
+xYieldPending           0x20003908     0x4  Data  Lc  tasks.o [1]
+
+
+[1] = E:\FreeRTOS\IAR\task\creating task\Debug\Obj
+[2] = command line
+[3] = dl7M_tln.a
+[4] = m7M_tls.a
+[5] = rt7M_tl.a
+[6] = shb_l.a
+
+   3 860 bytes of readonly  code memory
+     748 bytes of readonly  data memory
+  14 624 bytes of readwrite data memory
+
+Errors: none
+Warnings: none

@@ -1,0 +1,39 @@
+[Stack]
+FillEnabled=0
+OverflowWarningsEnabled=1
+WarningThreshold=90
+SpWarningsEnabled=1
+WarnLogOnly=1
+UseTrigger=1
+TriggerName=main
+LimitSize=0
+ByteLimit=50
+[LMIFTDIDriver]
+LMI_ResetMode=0x00000000
+LMI_LeaveTargetRunning=0x00000000
+LMIFTDIserialNo=0E216DDF
+LMIFTDIfoundProbes=
+[DebugChecksum]
+Checksum=434254625
+[Exceptions]
+StopOnUncaught=_ 0
+StopOnThrow=_ 0
+[CallStack]
+ShowArgs=0
+[Disassembly]
+MixedMode=1
+[Log file]
+LoggingEnabled=_ 0
+LogFile=_ ""
+Category=_ 0
+[TermIOLog]
+LoggingEnabled=_ 0
+LogFile=_ ""
+[Disassemble mode]
+mode=0
+[Breakpoints]
+Count=0
+[Aliases]
+A0=_ "E:\FreeRTOS\IAR\task\drivers\uart\src\uart.c" ""
+Count=1
+SuppressDialog=0
