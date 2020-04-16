@@ -1,0 +1,406 @@
+
+scheduler.elf:     file format elf32-avr
+
+Sections:
+Idx Name          Size      VMA       LMA       File off  Algn
+  0 .text         00000244  00000000  00000000  00000094  2**1
+                  CONTENTS, ALLOC, LOAD, READONLY, CODE
+  1 .data         00000002  00800060  00000244  000002d8  2**0
+                  CONTENTS, ALLOC, LOAD, DATA
+  2 .bss          0000002a  00800062  00800062  000002da  2**0
+                  ALLOC
+  3 .comment      00000030  00000000  00000000  000002da  2**0
+                  CONTENTS, READONLY
+  4 .note.gnu.avr.deviceinfo 0000003c  00000000  00000000  0000030c  2**2
+                  CONTENTS, READONLY
+  5 .debug_aranges 00000080  00000000  00000000  00000348  2**0
+                  CONTENTS, READONLY, DEBUGGING
+  6 .debug_info   0000095e  00000000  00000000  000003c8  2**0
+                  CONTENTS, READONLY, DEBUGGING
+  7 .debug_abbrev 000006fa  00000000  00000000  00000d26  2**0
+                  CONTENTS, READONLY, DEBUGGING
+  8 .debug_line   00000436  00000000  00000000  00001420  2**0
+                  CONTENTS, READONLY, DEBUGGING
+  9 .debug_frame  00000114  00000000  00000000  00001858  2**2
+                  CONTENTS, READONLY, DEBUGGING
+ 10 .debug_str    000003ac  00000000  00000000  0000196c  2**0
+                  CONTENTS, READONLY, DEBUGGING
+ 11 .debug_loc    0000027e  00000000  00000000  00001d18  2**0
+                  CONTENTS, READONLY, DEBUGGING
+ 12 .debug_ranges 00000060  00000000  00000000  00001f96  2**0
+                  CONTENTS, READONLY, DEBUGGING
+
+Disassembly of section .text:
+
+00000000 <__vectors>:
+   0:	0c 94 2a 00 	jmp	0x54	; 0x54 <__ctors_end>
+   4:	0c 94 47 00 	jmp	0x8e	; 0x8e <__bad_interrupt>
+   8:	0c 94 47 00 	jmp	0x8e	; 0x8e <__bad_interrupt>
+   c:	0c 94 47 00 	jmp	0x8e	; 0x8e <__bad_interrupt>
+  10:	0c 94 47 00 	jmp	0x8e	; 0x8e <__bad_interrupt>
+  14:	0c 94 47 00 	jmp	0x8e	; 0x8e <__bad_interrupt>
+  18:	0c 94 47 00 	jmp	0x8e	; 0x8e <__bad_interrupt>
+  1c:	0c 94 47 00 	jmp	0x8e	; 0x8e <__bad_interrupt>
+  20:	0c 94 47 00 	jmp	0x8e	; 0x8e <__bad_interrupt>
+  24:	0c 94 47 00 	jmp	0x8e	; 0x8e <__bad_interrupt>
+  28:	0c 94 47 00 	jmp	0x8e	; 0x8e <__bad_interrupt>
+  2c:	0c 94 85 00 	jmp	0x10a	; 0x10a <__vector_11>
+  30:	0c 94 47 00 	jmp	0x8e	; 0x8e <__bad_interrupt>
+  34:	0c 94 47 00 	jmp	0x8e	; 0x8e <__bad_interrupt>
+  38:	0c 94 47 00 	jmp	0x8e	; 0x8e <__bad_interrupt>
+  3c:	0c 94 47 00 	jmp	0x8e	; 0x8e <__bad_interrupt>
+  40:	0c 94 47 00 	jmp	0x8e	; 0x8e <__bad_interrupt>
+  44:	0c 94 47 00 	jmp	0x8e	; 0x8e <__bad_interrupt>
+  48:	0c 94 47 00 	jmp	0x8e	; 0x8e <__bad_interrupt>
+  4c:	0c 94 47 00 	jmp	0x8e	; 0x8e <__bad_interrupt>
+  50:	0c 94 47 00 	jmp	0x8e	; 0x8e <__bad_interrupt>
+
+00000054 <__ctors_end>:
+  54:	11 24       	eor	r1, r1
+  56:	1f be       	out	0x3f, r1	; 63
+  58:	cf e5       	ldi	r28, 0x5F	; 95
+  5a:	d8 e0       	ldi	r29, 0x08	; 8
+  5c:	de bf       	out	0x3e, r29	; 62
+  5e:	cd bf       	out	0x3d, r28	; 61
+
+00000060 <__do_copy_data>:
+  60:	10 e0       	ldi	r17, 0x00	; 0
+  62:	a0 e6       	ldi	r26, 0x60	; 96
+  64:	b0 e0       	ldi	r27, 0x00	; 0
+  66:	e4 e4       	ldi	r30, 0x44	; 68
+  68:	f2 e0       	ldi	r31, 0x02	; 2
+  6a:	02 c0       	rjmp	.+4      	; 0x70 <__do_copy_data+0x10>
+  6c:	05 90       	lpm	r0, Z+
+  6e:	0d 92       	st	X+, r0
+  70:	a2 36       	cpi	r26, 0x62	; 98
+  72:	b1 07       	cpc	r27, r17
+  74:	d9 f7       	brne	.-10     	; 0x6c <__do_copy_data+0xc>
+
+00000076 <__do_clear_bss>:
+  76:	20 e0       	ldi	r18, 0x00	; 0
+  78:	a2 e6       	ldi	r26, 0x62	; 98
+  7a:	b0 e0       	ldi	r27, 0x00	; 0
+  7c:	01 c0       	rjmp	.+2      	; 0x80 <.do_clear_bss_start>
+
+0000007e <.do_clear_bss_loop>:
+  7e:	1d 92       	st	X+, r1
+
+00000080 <.do_clear_bss_start>:
+  80:	ac 38       	cpi	r26, 0x8C	; 140
+  82:	b2 07       	cpc	r27, r18
+  84:	e1 f7       	brne	.-8      	; 0x7e <.do_clear_bss_loop>
+  86:	0e 94 6d 00 	call	0xda	; 0xda <main>
+  8a:	0c 94 20 01 	jmp	0x240	; 0x240 <_exit>
+
+0000008e <__bad_interrupt>:
+  8e:	0c 94 00 00 	jmp	0	; 0x0 <__vectors>
+
+00000092 <Task1>:
+#define LED0	2
+
+void Task1(void)
+{
+    static uint8_t status = 0x01;
+    if(status)
+  92:	80 91 61 00 	lds	r24, 0x0061	; 0x800061 <status.1639>
+  96:	88 23       	and	r24, r24
+  98:	11 f0       	breq	.+4      	; 0x9e <Task1+0xc>
+        PORTC |= (1<<LED0);
+  9a:	aa 9a       	sbi	0x15, 2	; 21
+  9c:	01 c0       	rjmp	.+2      	; 0xa0 <Task1+0xe>
+    else
+        PORTC &= ~(1<<LED0);
+  9e:	aa 98       	cbi	0x15, 2	; 21
+    status = !status;
+  a0:	81 e0       	ldi	r24, 0x01	; 1
+  a2:	90 91 61 00 	lds	r25, 0x0061	; 0x800061 <status.1639>
+  a6:	91 11       	cpse	r25, r1
+  a8:	80 e0       	ldi	r24, 0x00	; 0
+  aa:	80 93 61 00 	sts	0x0061, r24	; 0x800061 <status.1639>
+  ae:	08 95       	ret
+
+000000b0 <Task2>:
+
+
+void Task2(void)
+{
+    static uint8_t status = 0x01;
+    if( status )
+  b0:	80 91 60 00 	lds	r24, 0x0060	; 0x800060 <__DATA_REGION_ORIGIN__>
+  b4:	88 23       	and	r24, r24
+  b6:	11 f0       	breq	.+4      	; 0xbc <Task2+0xc>
+        PORTC|= (1<<LED1);
+  b8:	af 9a       	sbi	0x15, 7	; 21
+  ba:	01 c0       	rjmp	.+2      	; 0xbe <Task2+0xe>
+    else
+        PORTC &= ~(1<<LED1);
+  bc:	af 98       	cbi	0x15, 7	; 21
+    status = !status;
+  be:	81 e0       	ldi	r24, 0x01	; 1
+  c0:	90 91 60 00 	lds	r25, 0x0060	; 0x800060 <__DATA_REGION_ORIGIN__>
+  c4:	91 11       	cpse	r25, r1
+  c6:	80 e0       	ldi	r24, 0x00	; 0
+  c8:	80 93 60 00 	sts	0x0060, r24	; 0x800060 <__DATA_REGION_ORIGIN__>
+  cc:	08 95       	ret
+
+000000ce <timer_Init>:
+}
+
+void timer_Init(){
+	 // use 1/8 of system clock frequency
+	    TCCR0 = 0x03;//CS02 =0 CS01=1 CS00=1
+  ce:	83 e0       	ldi	r24, 0x03	; 3
+  d0:	83 bf       	out	0x33, r24	; 51
+	    // inital timer value = 0
+	    TCNT0 = 0;
+  d2:	12 be       	out	0x32, r1	; 50
+	    // enable Timer0 Overflow interrupt
+	    TIMSK = (1<<0); //TOIE0=bit0
+  d4:	81 e0       	ldi	r24, 0x01	; 1
+  d6:	89 bf       	out	0x39, r24	; 57
+  d8:	08 95       	ret
+
+000000da <main>:
+}
+int main(void)
+{
+
+    // set LED0 bit0 and LED1 on AMIT kit as outputs
+    DDRC = (1<<2)|(1<<7);
+  da:	84 e8       	ldi	r24, 0x84	; 132
+  dc:	84 bb       	out	0x14, r24	; 20
+   // PORTC|=(1<<LED0);
+    timer_Init();
+  de:	0e 94 67 00 	call	0xce	; 0xce <timer_Init>
+    SchedulerInit();
+  e2:	0e 94 bf 00 	call	0x17e	; 0x17e <SchedulerInit>
+    // add tasks, id is arbitrary
+    // task1 runs every 1 second
+    addTask(1, Task1, 10);
+  e6:	4a e0       	ldi	r20, 0x0A	; 10
+  e8:	50 e0       	ldi	r21, 0x00	; 0
+  ea:	69 e4       	ldi	r22, 0x49	; 73
+  ec:	70 e0       	ldi	r23, 0x00	; 0
+  ee:	81 e0       	ldi	r24, 0x01	; 1
+  f0:	0e 94 d1 00 	call	0x1a2	; 0x1a2 <addTask>
+
+    // task2 runs every 4 seconds
+    addTask(2, Task2, 40);
+  f4:	48 e2       	ldi	r20, 0x28	; 40
+  f6:	50 e0       	ldi	r21, 0x00	; 0
+  f8:	68 e5       	ldi	r22, 0x58	; 88
+  fa:	70 e0       	ldi	r23, 0x00	; 0
+  fc:	82 e0       	ldi	r24, 0x02	; 2
+  fe:	0e 94 d1 00 	call	0x1a2	; 0x1a2 <addTask>
+
+    // enable all interrupts
+    sei();
+ 102:	78 94       	sei
+    for(;;){
+    	//Task1();
+    	dispatchTasks();
+ 104:	0e 94 f3 00 	call	0x1e6	; 0x1e6 <dispatchTasks>
+ 108:	fd cf       	rjmp	.-6      	; 0x104 <main+0x2a>
+
+0000010a <__vector_11>:
+	 {
+		 if(task_list[idx].id==id)
+		 return task_list[idx].status;
+	 }
+	 return ERROR;
+ }
+ 10a:	1f 92       	push	r1
+ 10c:	0f 92       	push	r0
+ 10e:	0f b6       	in	r0, 0x3f	; 63
+ 110:	0f 92       	push	r0
+ 112:	11 24       	eor	r1, r1
+ 114:	2f 93       	push	r18
+ 116:	3f 93       	push	r19
+ 118:	8f 93       	push	r24
+ 11a:	9f 93       	push	r25
+ 11c:	ef 93       	push	r30
+ 11e:	ff 93       	push	r31
+ 120:	80 91 62 00 	lds	r24, 0x0062	; 0x800062 <__data_end>
+ 124:	90 91 63 00 	lds	r25, 0x0063	; 0x800063 <__data_end+0x1>
+ 128:	01 96       	adiw	r24, 0x01	; 1
+ 12a:	90 93 63 00 	sts	0x0063, r25	; 0x800063 <__data_end+0x1>
+ 12e:	80 93 62 00 	sts	0x0062, r24	; 0x800062 <__data_end>
+ 132:	80 91 62 00 	lds	r24, 0x0062	; 0x800062 <__data_end>
+ 136:	90 91 63 00 	lds	r25, 0x0063	; 0x800063 <__data_end+0x1>
+ 13a:	84 36       	cpi	r24, 0x64	; 100
+ 13c:	91 05       	cpc	r25, r1
+ 13e:	a1 f4       	brne	.+40     	; 0x168 <__vector_11+0x5e>
+ 140:	10 92 63 00 	sts	0x0063, r1	; 0x800063 <__data_end+0x1>
+ 144:	10 92 62 00 	sts	0x0062, r1	; 0x800062 <__data_end>
+ 148:	e4 e6       	ldi	r30, 0x64	; 100
+ 14a:	f0 e0       	ldi	r31, 0x00	; 0
+ 14c:	2c e8       	ldi	r18, 0x8C	; 140
+ 14e:	30 e0       	ldi	r19, 0x00	; 0
+ 150:	87 81       	ldd	r24, Z+7	; 0x07
+ 152:	81 11       	cpse	r24, r1
+ 154:	05 c0       	rjmp	.+10     	; 0x160 <__vector_11+0x56>
+ 156:	83 81       	ldd	r24, Z+3	; 0x03
+ 158:	94 81       	ldd	r25, Z+4	; 0x04
+ 15a:	01 97       	sbiw	r24, 0x01	; 1
+ 15c:	94 83       	std	Z+4, r25	; 0x04
+ 15e:	83 83       	std	Z+3, r24	; 0x03
+ 160:	38 96       	adiw	r30, 0x08	; 8
+ 162:	e2 17       	cp	r30, r18
+ 164:	f3 07       	cpc	r31, r19
+ 166:	a1 f7       	brne	.-24     	; 0x150 <__vector_11+0x46>
+ 168:	ff 91       	pop	r31
+ 16a:	ef 91       	pop	r30
+ 16c:	9f 91       	pop	r25
+ 16e:	8f 91       	pop	r24
+ 170:	3f 91       	pop	r19
+ 172:	2f 91       	pop	r18
+ 174:	0f 90       	pop	r0
+ 176:	0f be       	out	0x3f, r0	; 63
+ 178:	0f 90       	pop	r0
+ 17a:	1f 90       	pop	r1
+ 17c:	18 95       	reti
+
+0000017e <SchedulerInit>:
+ 17e:	e4 e6       	ldi	r30, 0x64	; 100
+ 180:	f0 e0       	ldi	r31, 0x00	; 0
+ 182:	2c e8       	ldi	r18, 0x8C	; 140
+ 184:	30 e0       	ldi	r19, 0x00	; 0
+ 186:	82 e0       	ldi	r24, 0x02	; 2
+ 188:	10 82       	st	Z, r1
+ 18a:	12 82       	std	Z+2, r1	; 0x02
+ 18c:	11 82       	std	Z+1, r1	; 0x01
+ 18e:	14 82       	std	Z+4, r1	; 0x04
+ 190:	13 82       	std	Z+3, r1	; 0x03
+ 192:	16 82       	std	Z+6, r1	; 0x06
+ 194:	15 82       	std	Z+5, r1	; 0x05
+ 196:	87 83       	std	Z+7, r24	; 0x07
+ 198:	38 96       	adiw	r30, 0x08	; 8
+ 19a:	e2 17       	cp	r30, r18
+ 19c:	f3 07       	cpc	r31, r19
+ 19e:	a1 f7       	brne	.-24     	; 0x188 <SchedulerInit+0xa>
+ 1a0:	08 95       	ret
+
+000001a2 <addTask>:
+ 1a2:	a4 e6       	ldi	r26, 0x64	; 100
+ 1a4:	b0 e0       	ldi	r27, 0x00	; 0
+ 1a6:	20 e0       	ldi	r18, 0x00	; 0
+ 1a8:	30 e0       	ldi	r19, 0x00	; 0
+ 1aa:	f9 01       	movw	r30, r18
+ 1ac:	17 96       	adiw	r26, 0x07	; 7
+ 1ae:	9c 91       	ld	r25, X
+ 1b0:	17 97       	sbiw	r26, 0x07	; 7
+ 1b2:	92 30       	cpi	r25, 0x02	; 2
+ 1b4:	89 f4       	brne	.+34     	; 0x1d8 <addTask+0x36>
+ 1b6:	ee 0f       	add	r30, r30
+ 1b8:	ff 1f       	adc	r31, r31
+ 1ba:	ee 0f       	add	r30, r30
+ 1bc:	ff 1f       	adc	r31, r31
+ 1be:	ee 0f       	add	r30, r30
+ 1c0:	ff 1f       	adc	r31, r31
+ 1c2:	ec 59       	subi	r30, 0x9C	; 156
+ 1c4:	ff 4f       	sbci	r31, 0xFF	; 255
+ 1c6:	80 83       	st	Z, r24
+ 1c8:	72 83       	std	Z+2, r23	; 0x02
+ 1ca:	61 83       	std	Z+1, r22	; 0x01
+ 1cc:	54 83       	std	Z+4, r21	; 0x04
+ 1ce:	43 83       	std	Z+3, r20	; 0x03
+ 1d0:	56 83       	std	Z+6, r21	; 0x06
+ 1d2:	45 83       	std	Z+5, r20	; 0x05
+ 1d4:	17 82       	std	Z+7, r1	; 0x07
+ 1d6:	08 95       	ret
+ 1d8:	2f 5f       	subi	r18, 0xFF	; 255
+ 1da:	3f 4f       	sbci	r19, 0xFF	; 255
+ 1dc:	18 96       	adiw	r26, 0x08	; 8
+ 1de:	25 30       	cpi	r18, 0x05	; 5
+ 1e0:	31 05       	cpc	r19, r1
+ 1e2:	19 f7       	brne	.-58     	; 0x1aa <addTask+0x8>
+ 1e4:	08 95       	ret
+
+000001e6 <dispatchTasks>:
+/*
+ * Dispatch
+ *
+ */
+void dispatchTasks(){
+ 1e6:	df 92       	push	r13
+ 1e8:	ef 92       	push	r14
+ 1ea:	ff 92       	push	r15
+ 1ec:	0f 93       	push	r16
+ 1ee:	1f 93       	push	r17
+ 1f0:	cf 93       	push	r28
+ 1f2:	df 93       	push	r29
+ 1f4:	c4 e6       	ldi	r28, 0x64	; 100
+ 1f6:	d0 e0       	ldi	r29, 0x00	; 0
+ 1f8:	0f 2e       	mov	r0, r31
+ 1fa:	fc e8       	ldi	r31, 0x8C	; 140
+ 1fc:	ef 2e       	mov	r14, r31
+ 1fe:	f0 e0       	ldi	r31, 0x00	; 0
+ 200:	ff 2e       	mov	r15, r31
+ 202:	f0 2d       	mov	r31, r0
+	 for(uint8_t idx=0;idx<TASKS_MAX;idx++)
+	 	{
+		 if(!task_list[idx].delay && task_list[idx].status==READY){
+			 //make the status is running
+		 		task_list[idx].status=RUNNING;
+ 204:	dd 24       	eor	r13, r13
+ 206:	d3 94       	inc	r13
+ *
+ */
+void dispatchTasks(){
+	 for(uint8_t idx=0;idx<TASKS_MAX;idx++)
+	 	{
+		 if(!task_list[idx].delay && task_list[idx].status==READY){
+ 208:	8b 81       	ldd	r24, Y+3	; 0x03
+ 20a:	9c 81       	ldd	r25, Y+4	; 0x04
+ 20c:	89 2b       	or	r24, r25
+ 20e:	61 f4       	brne	.+24     	; 0x228 <dispatchTasks+0x42>
+ 210:	8f 81       	ldd	r24, Y+7	; 0x07
+ 212:	81 11       	cpse	r24, r1
+ 214:	09 c0       	rjmp	.+18     	; 0x228 <dispatchTasks+0x42>
+			 //make the status is running
+		 		task_list[idx].status=RUNNING;
+ 216:	df 82       	std	Y+7, r13	; 0x07
+			 //call the task function
+		 		(*task_list[idx].task)();
+ 218:	e9 81       	ldd	r30, Y+1	; 0x01
+ 21a:	fa 81       	ldd	r31, Y+2	; 0x02
+ 21c:	09 95       	icall
+		 		//Reset period
+		 		task_list[idx].delay=task_list[idx].period;
+ 21e:	8d 81       	ldd	r24, Y+5	; 0x05
+ 220:	9e 81       	ldd	r25, Y+6	; 0x06
+ 222:	9c 83       	std	Y+4, r25	; 0x04
+ 224:	8b 83       	std	Y+3, r24	; 0x03
+			 //change the status again to be READY after function finishes
+		 		task_list[idx].status=READY;
+ 226:	1f 82       	std	Y+7, r1	; 0x07
+ 228:	28 96       	adiw	r28, 0x08	; 8
+/*
+ * Dispatch
+ *
+ */
+void dispatchTasks(){
+	 for(uint8_t idx=0;idx<TASKS_MAX;idx++)
+ 22a:	ce 15       	cp	r28, r14
+ 22c:	df 05       	cpc	r29, r15
+ 22e:	61 f7       	brne	.-40     	; 0x208 <dispatchTasks+0x22>
+		 		task_list[idx].delay=task_list[idx].period;
+			 //change the status again to be READY after function finishes
+		 		task_list[idx].status=READY;
+		 }
+	 	}
+}
+ 230:	df 91       	pop	r29
+ 232:	cf 91       	pop	r28
+ 234:	1f 91       	pop	r17
+ 236:	0f 91       	pop	r16
+ 238:	ff 90       	pop	r15
+ 23a:	ef 90       	pop	r14
+ 23c:	df 90       	pop	r13
+ 23e:	08 95       	ret
+
+00000240 <_exit>:
+ 240:	f8 94       	cli
+
+00000242 <__stop_program>:
+ 242:	ff cf       	rjmp	.-2      	; 0x242 <__stop_program>

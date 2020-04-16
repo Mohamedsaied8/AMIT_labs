@@ -1,8 +1,10 @@
 ################################################################################
-# Automatically-generated file. Do not edit!
+# Automatically-generated file. Do not edit or delete the file
 ################################################################################
 
-USER_OBJS :=
+main.c
 
-LIBS :=
+scheduler.c
+
+timer.c
 
