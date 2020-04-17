@@ -11,15 +11,16 @@
 #include "lcd.h"
 
 #define degree_sysmbol 0xdf
-#define ADMUX0		0
+#define ADMUX0		0  //ADC1
 
 void ADC_Init(){										
-	DDRA = 0xF0;							        /* Make ADC port as input */
+	DDRA &=~(1<<0);	
+	DDRA &=~(1<<1);						        /* Make ADC port as input */
 	ADCSRA =(1<<ADPS0) | (1<<ADPS1)	|(1<<ADPS2) | (1<<ADATE) | (1<<ADEN);							/* Enable ADC, with freq/128  */
 	ADMUX =(1<<REFS0) | (1<<REFS1) |(1<<ADMUX0);		/* Vref: Internal , ADC channel: 1 */
 }
 
-int ADC_Read(char channel)							
+unsigned int ADC_Read(char channel)							
 {					 
 	ADMUX = 0xC0 | (channel & 0x07);				/* set input channel to read */
 	ADCSRA |= (1<<ADSC);							/* Start ADC conversion */
@@ -27,8 +28,8 @@ int ADC_Read(char channel)
 	ADCSRA |= (1<<ADIF);							/* Clear interrupt flag */
 	_delay_ms(1);									/* Wait a little bit */
 	
-	int dataADC=ADCL;
-	dataADC=ADCH<<8;
+	unsigned int dataADC=ADCL;
+	dataADC|=(ADCH<<8);
 	return dataADC;
 	//return ADCW;									/* Return ADC word */
 	
